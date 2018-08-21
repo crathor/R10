@@ -9,6 +9,8 @@ const CODE_OF_CONDUCT = gql`
     allConducts {
       id
       title
+      description
+      order
     }
   }
 `
@@ -16,7 +18,10 @@ const CODE_OF_CONDUCT = gql`
 export default class AboutContainer extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      conductIdList: [],
+      selectedIds: []
+    }
   }
 
   render() {
@@ -25,8 +30,8 @@ export default class AboutContainer extends Component {
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator size="large" />
           if (error) return <Text>Error! {error.message}</Text>
-          console.log(data)
-          return <About codeOfConduct={data} />
+          const conductIdList = data.allConducts.map(conduct => conduct.id)
+          return <About codeOfConduct={data.allConducts} />
         }}
       </Query>
     )
