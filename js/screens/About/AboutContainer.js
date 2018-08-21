@@ -26,7 +26,6 @@ export default class AboutContainer extends Component {
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator size="large" />
           if (error) return <Text>Error! {error.message}</Text>
-          const conductIdList = data.allConducts.map(conduct => conduct.id)
           return <About codeOfConduct={data.allConducts} />
         }}
       </Query>
