@@ -16,6 +16,10 @@ const CODE_OF_CONDUCT = gql`
 `
 
 export default class AboutContainer extends Component {
+  static navigationOptions = {
+    title: 'About'
+  }
+
   render() {
     return (
       <Query query={CODE_OF_CONDUCT}>

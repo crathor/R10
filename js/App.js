@@ -7,40 +7,19 @@
  */
 
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
-import AboutScreen from './screens/About'
+import { StyleSheet } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
+import RootStack from './navigation/RootStackNavigation'
 
 export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <SafeAreaView style={styles.container}>
-          <View style={styles.container}>
-            <AboutScreen />
-          </View>
-        </SafeAreaView>
+        <RootStack />
       </ApolloProvider>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  }
-})
+const styles = StyleSheet.create({})

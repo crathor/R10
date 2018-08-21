@@ -6,7 +6,6 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  Animated,
   LayoutAnimation
 } from 'react-native'
 import Title from '../../components/Title'
@@ -98,7 +97,8 @@ class About extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 15
+    paddingTop: 10,
+    paddingHorizontal: 10
   },
   spacer: {
     height: 2,
