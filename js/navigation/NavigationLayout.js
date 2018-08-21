@@ -8,19 +8,48 @@ import AboutScreen from '../screens/About'
 import FavesScreen from '../screens/Faves'
 import MapsScreen from '../screens/Maps'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import { sharedNavigationOptions } from './config'
 
-const AboutStack = createStackNavigator({
-  About: AboutScreen
-})
-const ScheduleStack = createStackNavigator({
-  Schedule: ScheduleScreen
-})
-const FavesStack = createStackNavigator({
-  Faves: FavesScreen
-})
-const MapsStack = createStackNavigator({
-  Map: MapsScreen
-})
+const AboutStack = createStackNavigator(
+  {
+    About: AboutScreen
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+)
+const ScheduleStack = createStackNavigator(
+  {
+    Schedule: ScheduleScreen
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+)
+const FavesStack = createStackNavigator(
+  {
+    Faves: FavesScreen
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+)
+const MapsStack = createStackNavigator(
+  {
+    Map: MapsScreen
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      ...sharedNavigationOptions(navigation)
+    })
+  }
+)
 
 export default createBottomTabNavigator(
   {
@@ -60,7 +89,8 @@ export default createBottomTabNavigator(
       activeTintColor: 'white',
       inactiveTintColor: 'grey',
       labelStyle: {
-        fontSize: 10
+        fontSize: 10,
+        fontFamily: 'Montserrat'
       },
       style: {
         backgroundColor: 'black',
@@ -70,8 +100,7 @@ export default createBottomTabNavigator(
         },
         shadowOpacity: 0.5,
         shadowRadius: 2
-      },
-      tabStyle: {}
+      }
     }
   }
 )

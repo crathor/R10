@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import {
   Text,
   View,
-  StyleSheet,
   Image,
+  StyleSheet,
   TouchableOpacity,
   ScrollView,
   LayoutAnimation
 } from 'react-native'
 import Title from '../../components/Title'
+import { styles } from './styles'
 
 class About extends Component {
   constructor(props) {
@@ -94,30 +95,4 @@ class About extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 10,
-    paddingHorizontal: 10
-  },
-  spacer: {
-    height: 2,
-    backgroundColor: '#CCC'
-  },
-  header: {
-    justifyContent: 'center'
-  },
-  image: {
-    alignSelf: 'center'
-  },
-  font: {
-    fontSize: 20
-  },
-  margins: {
-    marginVertical: 10
-  },
-  conductTitle: {
-    color: 'purple'
-  }
-})
 export default About
