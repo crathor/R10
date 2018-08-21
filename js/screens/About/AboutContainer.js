@@ -16,14 +16,6 @@ const CODE_OF_CONDUCT = gql`
 `
 
 export default class AboutContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      conductIdList: [],
-      selectedIds: []
-    }
-  }
-
   render() {
     return (
       <Query query={CODE_OF_CONDUCT}>
