@@ -29,15 +29,25 @@ export default class SessionContainer extends Component {
     super(props)
     this.state = {}
   }
-
+  navigateToSpeaker(id) {
+    this.props.navigation.navigate('Speaker', { speakerID: id })
+  }
   render() {
-    const sessionID = this.props.navigation.getParam('sessionID', '')
+    const sessionID = this.props.navigation.getParam(
+      'sessionID',
+      'cjh2j37mo163p01221qpcklry'
+    )
     return (
       <Query query={GET_SESSION} variables={{ id: sessionID }}>
         {({ loading, error, data }) => {
           if (loading) return <ActivityIndicator size="large" />
           if (error) return <Text>Error! {error.message}</Text>
-          return <Session session={data.Session} />
+          return (
+            <Session
+              session={data.Session}
+              navigate={id => this.navigateToSpeaker(id)}
+            />
+          )
         }}
       </Query>
     )

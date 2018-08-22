@@ -23,8 +23,8 @@ const AboutStack = createStackNavigator(
 )
 const ScheduleStack = createStackNavigator(
   {
-    Schedule: ScheduleScreen,
-    Session: SessionScreen
+    Session: SessionScreen,
+    Schedule: ScheduleScreen
   },
   {
     navigationOptions: ({ navigation }) => ({
