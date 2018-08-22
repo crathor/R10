@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, Text, TouchableHighlight } from 'react-native'
-import styles from '../../config/styles'
+import LocationText from '../LocationText'
 
 const SectionCard = ({ item, pressed, styles }) => {
   return (
     <TouchableHighlight onPress={pressed}>
-      <View key={item.id} style={styles.section}>
+      <View style={styles.section}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.location}>{item.location}</Text>
+        <LocationText location={item.location} sessionId={item.id} />
       </View>
     </TouchableHighlight>
   )
