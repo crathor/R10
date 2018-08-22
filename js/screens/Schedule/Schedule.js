@@ -1,30 +1,22 @@
 import React from 'react'
-import {
-  View,
-  Text,
-  SectionList,
-  StyleSheet,
-  TouchableHighlight
-} from 'react-native'
-import Moment from 'moment'
+import { SectionList, StyleSheet } from 'react-native'
 import Spacer from '../../components/Spacer'
+import ScheduleHeader from '../../components/ScheduleHeader'
+import ScheduleSection from '../../components/ScheduleSection'
 
 const Schedule = ({ sessions, navigate }) => {
   return (
     <SectionList
       renderItem={({ item }) => (
-        <TouchableHighlight onPress={() => navigate(item.id)}>
-          <View key={item.id} style={styles.section}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.location}>{item.location}</Text>
-          </View>
-        </TouchableHighlight>
+        <ScheduleSection
+          item={item}
+          pressed={() => navigate(item.id)}
+          styles={styles}
+        />
       )}
       stickySectionHeadersEnabled={false}
       renderSectionHeader={({ section: { title } }) => (
-        <Text style={styles.sectionHeader}>
-          {Moment(title).format('h:mm A')}
-        </Text>
+        <ScheduleHeader title={title} styles={styles.sectionHeader} />
       )}
       ItemSeparatorComponent={() => <Spacer height={1} />}
       sections={sessions}
