@@ -11,12 +11,15 @@ import { StyleSheet } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
 import RootStack from './navigation/RootStackNavigation'
+import { FavesProvider } from './context/FavesContext'
 
 export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <RootStack />
+        <FavesProvider>
+          <RootStack />
+        </FavesProvider>
       </ApolloProvider>
     )
   }
