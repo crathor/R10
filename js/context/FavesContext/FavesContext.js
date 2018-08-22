@@ -14,20 +14,39 @@ class FavesProvider extends Component {
   componentDidMount() {
     this.getFavedSessionIds()
   }
-  getFavedSessionIds() {
-    this.setState({ faveIds: getFaves() })
+  getFavedSessionIds = () => {
+    try {
+      this.setState({ faveIds: getFaves() })
+    } catch (error) {
+      console.log(error)
+    }
   }
-  addFaveSession(sessionId) {
-    addToFaves(sessionId)
+  addFaveSession = sessionId => {
+    try {
+      addToFaves(sessionId)
+      this.getFavedSessionIds()
+    } catch (error) {
+      console.log(error)
+    }
   }
-  removeFaveSession(sessionId) {
-    removeFromFaves(sessionId)
+  removeFaveSession = sessionId => {
+    try {
+      console.log(sessionId)
+      removeFromFaves(sessionId)
+      this.getFavedSessionIds()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
     return (
       <FavesContext.Provider
-        value={{ ...this.state, addFaveSession, removeFavesSession }}
+        value={{
+          ...this.state,
+          addFaveSession: this.addFaveSession,
+          removeFaveSession: this.removeFaveSession
+        }}
       >
         {this.props.children}
       </FavesContext.Provider>

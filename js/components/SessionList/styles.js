@@ -1,7 +1,6 @@
-// global styles
 import { StyleSheet } from 'react-native'
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   section: {
     padding: 10,
     backgroundColor: '#fff',
@@ -22,3 +21,5 @@ export const styles = StyleSheet.create({
     paddingVertical: 7
   }
 })
+
+export default styles

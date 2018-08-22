@@ -1,12 +1,7 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import SessionList from '../../components/SessionList'
 
-const Faves = () => {
-  return (
-    <View>
-      <Text>Faves</Text>
-    </View>
-  )
-}
-
+const Faves = ({ faves, navigate }) => (
+  <SessionList sessions={faves} navigate={navigate} />
+)
 export default Faves

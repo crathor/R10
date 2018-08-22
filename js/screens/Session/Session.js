@@ -11,12 +11,14 @@ import Moment from 'moment'
 import Title from '../../components/Title'
 import LinearGradient from 'react-native-linear-gradient'
 
-const Session = ({ session, navigate }) => {
-  console.log(session)
+const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Text style={styles.location}>{session.location}</Text>
+    <ScrollView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.location}>
+          {session.location}
+          {faveIds.includes(session.id) && 'Faved'}
+        </Text>
         <Title>{session.title}</Title>
         <Text style={styles.time}>
           {Moment(session.startTime).format('h:mm A')}
@@ -36,7 +38,11 @@ const Session = ({ session, navigate }) => {
         <TouchableOpacity
           activeOpacity={0.8}
           style={styles.buttonContainer}
-          onPress={() => {}}
+          onPress={() => {
+            faveIds.includes(session.id)
+              ? removeFave(session.id)
+              : addFave(session.id)
+          }}
         >
           <LinearGradient
             colors={['#8797D6', '#9963ea']}
@@ -44,11 +50,15 @@ const Session = ({ session, navigate }) => {
             end={{ x: 0.0, y: 0.0 }}
             style={[StyleSheet.absoluteFill, styles.button]}
           >
-            <Text style={styles.buttonText}>Remove from Faves</Text>
+            <Text style={styles.buttonText}>
+              {faveIds.includes(session.id)
+                ? 'Remove from Faves'
+                : 'Add to Faves'}
+            </Text>
           </LinearGradient>
         </TouchableOpacity>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   )
 }
 
@@ -56,8 +66,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-    padding: 15,
-    fontFamily: 'Montserrat'
+    padding: 15
   },
   button: {
     height: 55,

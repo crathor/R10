@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text, Button, Image, StyleSheet, ScrollView } from 'react-native'
 
 const Speaker = ({ speaker, navigateBack }) => {
-  console.log(speaker)
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>

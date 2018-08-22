@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Text, TouchableHighlight } from 'react-native'
+import styles from '../../config/styles'
 
-const ScheduleSection = ({ item, pressed, styles }) => {
+const SectionCard = ({ item, pressed, styles }) => {
   return (
     <TouchableHighlight onPress={pressed}>
       <View key={item.id} style={styles.section}>
@@ -12,4 +13,4 @@ const ScheduleSection = ({ item, pressed, styles }) => {
   )
 }
 
-export default ScheduleSection
+export default SectionCard

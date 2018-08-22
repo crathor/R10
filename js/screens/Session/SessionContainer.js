@@ -3,10 +3,13 @@ import { Text, ActivityIndicator } from 'react-native'
 import Session from './Session'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import FavesContext from '../../context/FavesContext'
+import { valueFromAST } from 'graphql'
 
 const GET_SESSION = gql`
   query getSession($id: ID) {
     Session(id: $id) {
+      id
       location
       startTime
       title
@@ -38,18 +41,27 @@ export default class SessionContainer extends Component {
       'cjh2j37mo163p01221qpcklry'
     )
     return (
-      <Query query={GET_SESSION} variables={{ id: sessionID }}>
-        {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size="large" />
-          if (error) return <Text>Error! {error.message}</Text>
+      <FavesContext.Consumer>
+        {value => {
           return (
-            <Session
-              session={data.Session}
-              navigate={id => this.navigateToSpeaker(id)}
-            />
+            <Query query={GET_SESSION} variables={{ id: sessionID }}>
+              {({ loading, error, data }) => {
+                if (loading) return <ActivityIndicator size="large" />
+                if (error) return <Text>Error! {error.message}</Text>
+                return (
+                  <Session
+                    session={data.Session}
+                    navigate={id => this.navigateToSpeaker(id)}
+                    addFave={value.addFaveSession}
+                    removeFave={value.removeFaveSession}
+                    faveIds={value.faveIds.map(fave => fave.id)}
+                  />
+                )
+              }}
+            </Query>
           )
         }}
-      </Query>
+      </FavesContext.Consumer>
     )
   }
 }
