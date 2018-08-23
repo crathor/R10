@@ -34,7 +34,7 @@ export const sharedNavigationOptions = navigation => ({
     ...Platform.select({
       ios: {},
       android: {
-        marginLeft: 30
+        marginLeft: 15
       }
     })
   }
