@@ -7,12 +7,14 @@
  */
 
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, UIManager } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
 import RootStack from './navigation/RootStackNavigation'
 import { FavesProvider } from './context/FavesContext'
 
+UIManager.setLayoutAnimationEnabledExperimental &&
+  UIManager.setLayoutAnimationEnabledExperimental(true)
 export default class App extends Component {
   render() {
     return (

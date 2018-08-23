@@ -18,7 +18,12 @@ const GradientHeader = props => (
 
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
-  headerLeft: <HamburgerIcon pressed={() => navigation.openDrawer()} />,
+  ...Platform.select({
+    ios: {},
+    android: {
+      headerLeft: <HamburgerIcon pressed={() => navigation.openDrawer()} />
+    }
+  }),
   header: props => <GradientHeader {...props} />,
   headerStyle: {
     backgroundColor: 'transparent'
