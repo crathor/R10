@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react'
-import { StyleSheet, UIManager } from 'react-native'
+import { UIManager } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
 import RootStack from './navigation/RootStackNavigation'
@@ -26,5 +26,3 @@ export default class App extends Component {
     )
   }
 }
-
-const styles = StyleSheet.create({})

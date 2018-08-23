@@ -1,31 +1,67 @@
 // global styles
 import { StyleSheet, Platform } from 'react-native'
 
-export const styles = StyleSheet.create({
+export const globalStyles = StyleSheet.create({
   section: {
     padding: 10,
     backgroundColor: '#fff',
-    fontFamily: 'Montserrat'
+    fontFamily: Platform.select({
+      ios: 'Montserrat',
+      android: 'Montserrat-Regular'
+    })
   },
   sectionHeader: {
     paddingVertical: 4,
     paddingLeft: 10,
-    fontFamily: 'Montserrat'
+    fontFamily: Platform.select({
+      ios: 'Montserrat',
+      android: 'Montserrat-Regular'
+    })
   },
   title: {
-    fontFamily: 'Montserrat',
-    fontSize: 18
+    fontFamily: Platform.select({
+      ios: 'Montserrat',
+      android: 'Montserrat-Regular'
+    }),
+    fontSize: 18,
+    color: '#000000'
   },
   location: {
     color: '#999999',
     fontWeight: 'bold',
     paddingVertical: 7
   },
+  sm: {
+    fontSize: 18
+  },
+  md: {
+    fontSize: 22
+  },
+  lg: {
+    fontSize: 30
+  },
   mainFont: {
     fontFamily: Platform.select({
       ios: 'Montserrat',
       android: 'Montserrat-Regular'
-    })
+    }),
+    fontSize: 18,
+    color: '#000000'
+  },
+  medGrey: {
+    color: '#999999'
+  },
+  lightGrey: {
+    color: '#e6e6e6'
+  },
+  blue: {
+    color: '#8797D6'
+  },
+  purple: {
+    color: '#9963ea'
+  },
+  red: {
+    color: '#cf392a'
   }
 })
 

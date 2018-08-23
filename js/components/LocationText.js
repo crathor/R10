@@ -12,7 +12,6 @@ const LocationText = ({ location, sessionId }) => {
     <FavesContext.Consumer>
       {value => {
         const faveList = value.faveIds.map(f => f.id)
-        console.log(faveList)
         return (
           <View style={styles.container}>
             <Text style={styles.text}>{location}</Text>
@@ -35,7 +34,10 @@ const styles = StyleSheet.create({
   text: {
     color: '#999999',
     fontSize: 18,
-    fontFamily: 'Montserrat-light'
+    fontFamily: Platform.select({
+      ios: 'Montserrat-light',
+      android: 'Montserrat-Regular'
+    })
   }
 })
 

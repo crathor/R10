@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 import Title from '../../components/Title'
 import { styles } from './styles'
+import { globalStyles } from '../../config/styles'
 
 class About extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class About extends Component {
 
   renderDescription(description) {
     return (
-      <Text style={StyleSheet.flatten([styles.font, styles.margins])}>
+      <Text style={StyleSheet.flatten([globalStyles.mainFont, styles.margins])}>
         {description}
       </Text>
     )
@@ -42,7 +43,9 @@ class About extends Component {
     const { codeOfConduct } = this.props
     const { selected } = this.state
     return (
-      <View style={styles.container}>
+      <View
+        style={StyleSheet.flatten([globalStyles.mainFont, styles.container])}
+      >
         <ScrollView>
           <View style={styles.header}>
             <Image
@@ -50,14 +53,19 @@ class About extends Component {
               source={require('../../assets/images/r10_logo.png')}
             />
             <View style={StyleSheet.flatten([styles.spacer, styles.margins])} />
-            <Text style={StyleSheet.flatten([styles.font, styles.margins])}>
+            <Text
+              style={StyleSheet.flatten([
+                globalStyles.mainFont,
+                styles.margins
+              ])}
+            >
               R10 is a conference that focuses on just about any topic related
               to dev.
             </Text>
           </View>
           <View>
             <Title>Data and Venue</Title>
-            <Text style={StyleSheet.flatten([styles.font])}>
+            <Text style={StyleSheet.flatten([globalStyles.mainFont])}>
               The R10 conference will take place on Friday, September 21, 2018
               in Vancouver, BC
             </Text>
@@ -74,7 +82,7 @@ class About extends Component {
                   >
                     <Text
                       style={StyleSheet.flatten([
-                        styles.font,
+                        globalStyles.mainFont,
                         styles.conductTitle,
                         styles.margins
                       ])}

@@ -20,8 +20,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#ffffff',
-    fontSize: 20,
-    fontFamily: 'Montserrat'
+    fontSize: 20
   },
   location: {
     color: '#999999',
@@ -34,7 +33,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   },
   description: {
-    fontFamily: 'Montserrat-light',
     fontSize: 20,
     lineHeight: 30
   },
@@ -51,7 +49,6 @@ const styles = StyleSheet.create({
   speakerName: {
     paddingLeft: 20,
     fontSize: 20,
-    fontFamily: 'Montserrat-light',
     fontWeight: 'bold'
   },
   image: {

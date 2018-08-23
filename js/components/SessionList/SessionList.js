@@ -1,9 +1,9 @@
 import React from 'react'
-import { SectionList } from 'react-native'
-import styles from './styles'
+import { SectionList, StyleSheet } from 'react-native'
 import SectionCard from './SectionCard'
 import SectionHeader from './SectionHeader'
 import Spacer from '../Spacer'
+import { globalStyles } from '../../config/styles'
 
 const SessionList = ({ sessions, navigate }) => (
   <SectionList
@@ -11,12 +11,18 @@ const SessionList = ({ sessions, navigate }) => (
       <SectionCard
         item={item}
         pressed={() => navigate(item.id)}
-        styles={styles}
+        styles={globalStyles}
       />
     )}
     stickySectionHeadersEnabled={false}
     renderSectionHeader={({ section: { title } }) => (
-      <SectionHeader title={title} styles={styles.sectionHeader} />
+      <SectionHeader
+        title={title}
+        styles={StyleSheet.flatten([
+          globalStyles.sectionHeader,
+          globalStyles.mainFont
+        ])}
+      />
     )}
     ItemSeparatorComponent={() => <Spacer height={1} />}
     sections={sessions}
