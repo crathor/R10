@@ -4,13 +4,14 @@ import {
   Text,
   Image,
   StyleSheet,
-  TouchableOpacity,
+  TouchableHighlight,
   ScrollView
 } from 'react-native'
 import Moment from 'moment'
 import Title from '../../components/Title'
 import LinearGradient from 'react-native-linear-gradient'
 import LocationText from '../../components/LocationText'
+import styles from './styles'
 
 const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
   return (
@@ -22,15 +23,15 @@ const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
       </Text>
       <Text style={styles.description}>{session.description}</Text>
       <Text style={styles.presentedBy}>Presented By:</Text>
-      <TouchableOpacity onPress={() => navigate(session.speaker.id)}>
+      <TouchableHighlight onPress={() => navigate(session.speaker.id)}>
         <View style={styles.speaker}>
           <Image style={styles.image} source={{ uri: session.speaker.image }} />
           <Text style={styles.speakerName}>{session.speaker.name}</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableHighlight>
       <View style={styles.spacer} />
-      <TouchableOpacity
-        activeOpacity={0.8}
+      {/* <ButtonGradient title={'hello'} pressed={() => {}} /> */}
+      <TouchableHighlight
         style={styles.buttonContainer}
         onPress={() => {
           faveIds.includes(session.id)
@@ -50,77 +51,9 @@ const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
               : 'Add to Faves'}
           </Text>
         </LinearGradient>
-      </TouchableOpacity>
+      </TouchableHighlight>
     </ScrollView>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    padding: 15
-  },
-  button: {
-    height: 55,
-    width: '70%',
-    borderRadius: 50,
-    marginTop: 15,
-    marginLeft: '15%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 20,
-    fontFamily: 'Montserrat'
-  },
-  location: {
-    color: '#999999',
-    fontWeight: 'bold',
-    fontSize: 16
-  },
-  time: {
-    color: '#cf392a',
-    fontSize: 18,
-    paddingBottom: 10
-  },
-  description: {
-    fontFamily: 'Montserrat-light',
-    fontSize: 20,
-    lineHeight: 30
-  },
-  presentedBy: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#999999',
-    paddingVertical: 10
-  },
-  speaker: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  speakerName: {
-    paddingLeft: 20,
-    fontSize: 20,
-    fontFamily: 'Montserrat-light',
-    fontWeight: 'bold'
-  },
-  image: {
-    width: 70,
-    height: 70,
-    borderRadius: 35
-  },
-  spacer: {
-    height: 2,
-    backgroundColor: '#e6e6e6',
-    marginVertical: 20
-  }
-})
 export default Session
-
-// Medium Grey: #999999
-// Light Grey: #e6e6e6
-// Blue: #8797D6
-// Purple: #9963ea
-// Red: #cf392a

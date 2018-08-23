@@ -1,5 +1,5 @@
 // global styles
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 
 export const styles = StyleSheet.create({
   section: {
@@ -20,5 +20,17 @@ export const styles = StyleSheet.create({
     color: '#999999',
     fontWeight: 'bold',
     paddingVertical: 7
+  },
+  mainFont: {
+    fontFamily: Platform.select({
+      ios: 'Montserrat',
+      android: 'Montserrat-Regular'
+    })
   }
 })
+
+// Medium Grey: #999999
+// Light Grey: #e6e6e6
+// Blue: #8797D6
+// Purple: #9963ea
+// Red: #cf392a

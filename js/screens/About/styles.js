@@ -4,7 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 10,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    backgroundColor: '#ffffff'
   },
   spacer: {
     height: 2,
@@ -17,8 +18,8 @@ export const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   font: {
-    fontSize: 20,
-    fontFamily: 'Montserrat'
+    fontSize: 18,
+    fontFamily: 'Montserrat-light'
   },
   margins: {
     marginVertical: 10

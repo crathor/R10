@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, ActivityIndicator } from 'react-native'
+import { Text, ActivityIndicator, Button } from 'react-native'
 import Schedule from './Schedule'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'

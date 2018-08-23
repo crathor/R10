@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, ActivityIndicator } from 'react-native'
+import { Text, ActivityIndicator, Button } from 'react-native'
 import About from './About'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
@@ -21,6 +21,7 @@ export default class AboutContainer extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <Query query={CODE_OF_CONDUCT}>
         {({ loading, error, data }) => {
