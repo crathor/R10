@@ -1,7 +1,8 @@
 import React from 'react'
-import { SectionList, StyleSheet } from 'react-native'
+import { SectionList, StyleSheet, Text } from 'react-native'
 import SectionCard from './SectionCard'
 import SectionHeader from './SectionHeader'
+import EmptyList from './EmptyList'
 import Spacer from '../Spacer'
 import { globalStyles } from '../../config/styles'
 import PropTypes from 'prop-types'
@@ -28,6 +29,7 @@ const SessionList = ({ sessions, navigate }) => (
     ItemSeparatorComponent={() => <Spacer height={1} />}
     sections={sessions}
     keyExtractor={(item, index) => item + index}
+    ListEmptyComponent={<EmptyList />}
   />
 )
 

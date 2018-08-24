@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     padding: 15
   },
+  scroll: {
+    flex: 1
+  },
   location: {
     color: '#999999',
     fontWeight: 'bold',

@@ -37,8 +37,6 @@ export const styles = StyleSheet.create({
   speakerContainer: {
     backgroundColor: '#ffffff',
     height: '100%',
-    padding: 10,
-    paddingBottom: 100,
     margin: 10,
     marginBottom: 0,
     borderRadius: 10,
@@ -46,7 +44,8 @@ export const styles = StyleSheet.create({
     borderBottomRightRadius: 0
   },
   speaker: {
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: 10
   },
   speakerName: {
     fontSize: 30,

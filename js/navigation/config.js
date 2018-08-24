@@ -30,11 +30,11 @@ export const sharedNavigationOptions = navigation => ({
   },
   headerTintColor: 'white',
   headerTitleStyle: {
-    fontFamily: 'Montserrat-light',
     ...Platform.select({
-      ios: {},
+      ios: { fontFamily: 'Montserrat-light' },
       android: {
-        marginLeft: 15
+        marginLeft: 15,
+        fontFamily: 'Montserrat-Regular'
       }
     })
   }

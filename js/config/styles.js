@@ -31,15 +31,6 @@ export const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     paddingVertical: 7
   },
-  sm: {
-    fontSize: 18
-  },
-  md: {
-    fontSize: 22
-  },
-  lg: {
-    fontSize: 30
-  },
   mainFont: {
     fontFamily: Platform.select({
       ios: 'Montserrat',
