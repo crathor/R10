@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableHighlight, StyleSheet } from 'react-native'
 import LocationText from '../LocationText'
 import { globalStyles } from '../../config/styles'
+import PropTypes from 'prop-types'
 
 const SectionCard = ({ item, pressed, styles }) => {
   return (
@@ -14,4 +15,9 @@ const SectionCard = ({ item, pressed, styles }) => {
   )
 }
 
+SectionCard.propTypes = {
+  item: PropTypes.object.isRequired,
+  pressed: PropTypes.func.isRequired,
+  styles: PropTypes.object.isRequired
+}
 export default SectionCard

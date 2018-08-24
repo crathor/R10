@@ -2,6 +2,7 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import styles from './styles'
+import PropTypes from 'prop-types'
 
 const HamburgerMenu = ({ pressed }) => {
   return (
@@ -11,4 +12,7 @@ const HamburgerMenu = ({ pressed }) => {
   )
 }
 
+HamburgerMenu.propTypes = {
+  pressed: PropTypes.func.isRequired
+}
 export default HamburgerMenu

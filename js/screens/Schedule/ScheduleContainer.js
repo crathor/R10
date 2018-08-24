@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Text, ActivityIndicator, Button } from 'react-native'
+import { Text, ActivityIndicator } from 'react-native'
 import Schedule from './Schedule'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { formatSessionData } from '../../lib/formatSessionData'
+import PropTypes from 'prop-types'
+
 const All_SESSIONS = gql`
   {
     allSessions {
@@ -21,11 +23,6 @@ const All_SESSIONS = gql`
 export default class ScheduleContainer extends Component {
   static navigationOptions = {
     title: 'Schedule'
-  }
-
-  constructor(props) {
-    super(props)
-    this.state = {}
   }
 
   navigateToSession(id) {
@@ -47,4 +44,8 @@ export default class ScheduleContainer extends Component {
       </Query>
     )
   }
+}
+
+ScheduleContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
 }

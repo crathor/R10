@@ -11,6 +11,7 @@ import {
 import { globalStyles } from '../../config/styles'
 import GradientButton from '../../components/GradientButton'
 import styles from './styles'
+import PropTypes from 'prop-types'
 
 const Speaker = ({ speaker, navigateBack }) => {
   return (
@@ -45,6 +46,11 @@ const Speaker = ({ speaker, navigateBack }) => {
       </ScrollView>
     </View>
   )
+}
+
+Speaker.propTypes = {
+  speaker: PropTypes.object.isRequired,
+  navigateBack: PropTypes.func.isRequired
 }
 
 export default Speaker

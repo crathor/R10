@@ -3,6 +3,7 @@ import { View, Text, Platform } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FavesContext from '../../context/FavesContext'
 import styles from './styles'
+import PropTypes from 'prop-types'
 
 const heart = Platform.select({
   ios: 'ios-heart',
@@ -26,4 +27,8 @@ const LocationText = ({ location, sessionId }) => {
   )
 }
 
+LocationText.propTypes = {
+  location: PropTypes.string.isRequired,
+  sessionId: PropTypes.string.isRequired
+}
 export default LocationText

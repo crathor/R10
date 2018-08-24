@@ -11,6 +11,7 @@ import {
 import Title from '../../components/Title'
 import { styles } from './styles'
 import { globalStyles } from '../../config/styles'
+import PropTypes from 'prop-types'
 
 class About extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class About extends Component {
   render() {
     const { codeOfConduct } = this.props
     const { selected } = this.state
+    console.log(this.props)
     return (
       <View
         style={StyleSheet.flatten([globalStyles.mainFont, styles.container])}
@@ -103,4 +105,7 @@ class About extends Component {
   }
 }
 
+About.propTypes = {
+  codeOfConduct: PropTypes.array.isRequired
+}
 export default About

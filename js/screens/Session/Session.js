@@ -13,6 +13,7 @@ import LocationText from '../../components/LocationText'
 import styles from './styles'
 import { globalStyles } from '../../config/styles'
 import GradientButton from '../../components/GradientButton'
+import PropTypes from 'prop-types'
 
 const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
   return (
@@ -62,4 +63,11 @@ const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
   )
 }
 
+Session.propTypes = {
+  session: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  addFave: PropTypes.func.isRequired,
+  removeFave: PropTypes.func.isRequired,
+  faveIds: PropTypes.array.isRequired
+}
 export default Session

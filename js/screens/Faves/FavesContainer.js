@@ -5,6 +5,7 @@ import FavesContext from '../../context/FavesContext'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { formatSessionData } from '../../lib/formatSessionData'
+import PropTypes from 'prop-types'
 
 const GET_FAVES = gql`
   {
@@ -20,11 +21,6 @@ const GET_FAVES = gql`
 export default class FavesContainer extends Component {
   static navigationOptions = {
     title: 'Favorites'
-  }
-
-  constructor(props) {
-    super(props)
-    this.state = {}
   }
   navigateToSession(id) {
     this.props.navigation.navigate('Session', { sessionID: id })
@@ -59,4 +55,8 @@ export default class FavesContainer extends Component {
       </FavesContext.Consumer>
     )
   }
+}
+
+FavesContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
 }

@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import styles from './styles'
 import { globalStyles } from '../../config/styles'
+import PropTypes from 'prop-types'
 
 const GradientButton = ({ pressed, title }) => (
   <TouchableOpacity
@@ -25,4 +26,8 @@ const GradientButton = ({ pressed, title }) => (
   </TouchableOpacity>
 )
 
+GradientButton.propTypes = {
+  pressed: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired
+}
 export default GradientButton

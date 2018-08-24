@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, ActivityIndicator, Button } from 'react-native'
+import { Text, ActivityIndicator } from 'react-native'
 import About from './About'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import PropTypes from 'prop-types'
 
 const CODE_OF_CONDUCT = gql`
   {
@@ -31,4 +32,8 @@ export default class AboutContainer extends Component {
       </Query>
     )
   }
+}
+
+AboutContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
 }

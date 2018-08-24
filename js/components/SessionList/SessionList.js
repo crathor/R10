@@ -4,6 +4,7 @@ import SectionCard from './SectionCard'
 import SectionHeader from './SectionHeader'
 import Spacer from '../Spacer'
 import { globalStyles } from '../../config/styles'
+import PropTypes from 'prop-types'
 
 const SessionList = ({ sessions, navigate }) => (
   <SectionList
@@ -30,4 +31,8 @@ const SessionList = ({ sessions, navigate }) => (
   />
 )
 
+SessionList.propTypes = {
+  sessions: PropTypes.array.isRequired,
+  navigate: PropTypes.func.isRequired
+}
 export default SessionList
