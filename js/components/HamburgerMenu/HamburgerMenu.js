@@ -1,17 +1,14 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import styles from './styles'
 
-const HamburgerIcon = ({ pressed }) => {
+const HamburgerMenu = ({ pressed }) => {
   return (
-    <TouchableOpacity
-      style={{ marginLeft: 20 }}
-      activeOpacity={0.6}
-      onPress={pressed}
-    >
+    <TouchableOpacity style={styles.menu} activeOpacity={0.6} onPress={pressed}>
       <Ionicons name={'md-menu'} size={30} color={'#ffffff'} />
     </TouchableOpacity>
   )
 }
 
-export default HamburgerIcon
+export default HamburgerMenu

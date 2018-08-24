@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text, StyleSheet, Platform } from 'react-native'
+import { View, Text, Platform } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import FavesContext from '../context/FavesContext'
+import FavesContext from '../../context/FavesContext'
+import styles from './styles'
 
 const heart = Platform.select({
   ios: 'ios-heart',
@@ -24,21 +25,5 @@ const LocationText = ({ location, sessionId }) => {
     </FavesContext.Consumer>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 8
-  },
-  text: {
-    color: '#999999',
-    fontSize: 18,
-    fontFamily: Platform.select({
-      ios: 'Montserrat-light',
-      android: 'Montserrat-Regular'
-    })
-  }
-})
 
 export default LocationText

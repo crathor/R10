@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Platform } from 'react-native'
 import { Header } from 'react-navigation'
 import LinearGradient from 'react-native-linear-gradient'
-import HamburgerIcon from '../components/Hamburger'
+import HamburgerMenu from '../components/HamburgerMenu'
 
 const GradientHeader = props => (
   <View style={{ backgroundColor: 'white', overflow: 'hidden' }}>
@@ -21,7 +21,7 @@ export const sharedNavigationOptions = navigation => ({
   ...Platform.select({
     ios: {},
     android: {
-      headerLeft: <HamburgerIcon pressed={() => navigation.openDrawer()} />
+      headerLeft: <HamburgerMenu pressed={() => navigation.openDrawer()} />
     }
   }),
   header: props => <GradientHeader {...props} />,
