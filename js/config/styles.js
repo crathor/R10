@@ -45,8 +45,7 @@ export const globalStyles = StyleSheet.create({
       ios: 'Montserrat',
       android: 'Montserrat-Regular'
     }),
-    fontSize: 18,
-    color: '#000000'
+    fontSize: 18
   },
   medGrey: {
     color: '#999999'

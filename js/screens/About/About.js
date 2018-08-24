@@ -46,7 +46,7 @@ class About extends Component {
       <View
         style={StyleSheet.flatten([globalStyles.mainFont, styles.container])}
       >
-        <ScrollView>
+        <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
           <View style={styles.header}>
             <Image
               style={styles.image}

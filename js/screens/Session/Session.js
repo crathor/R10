@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ import GradientButton from '../../components/GradientButton'
 
 const Session = ({ session, navigate, addFave, removeFave, faveIds }) => {
   return (
-    <ScrollView style={styles.container} showsHorizontalScrollIndicator={false}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <LocationText location={session.location} sessionId={session.id} />
 
       <Title>{session.title}</Title>
