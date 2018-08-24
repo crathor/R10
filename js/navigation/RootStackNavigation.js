@@ -4,8 +4,8 @@ import SpeakerScreen from '../screens/Speaker'
 
 export default createStackNavigator(
   {
-    Speaker: SpeakerScreen,
-    NavigationLayout
+    NavigationLayout,
+    Speaker: SpeakerScreen
   },
   {
     mode: 'modal',

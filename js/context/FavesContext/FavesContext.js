@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { addToFaves, removeFromFaves, getFaves } from '../../config/models'
+import realm from '../../config/models'
 
 const FavesContext = React.createContext()
 
@@ -9,11 +10,13 @@ class FavesProvider extends Component {
     this.state = {
       faveIds: []
     }
+    realm.addListener('change', this.getFavedSessionIds)
   }
 
   componentDidMount() {
     this.getFavedSessionIds()
   }
+
   getFavedSessionIds = () => {
     try {
       this.setState({ faveIds: getFaves() })

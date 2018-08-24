@@ -33,7 +33,6 @@ export default class FavesContainer extends Component {
     return (
       <FavesContext.Consumer>
         {value => {
-          console.log(value)
           return (
             <Query query={GET_FAVES}>
               {({ loading, error, data }) => {

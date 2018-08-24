@@ -1,12 +1,23 @@
 import React from 'react'
-import { View, Text, Button, Image, StyleSheet, ScrollView } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  ScrollView,
+  Linking
+} from 'react-native'
 import { globalStyles } from '../../config/styles'
+import GradientButton from '../../components/GradientButton'
 
 const Speaker = ({ speaker, navigateBack }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Button onPress={navigateBack} title="X" />
+        <TouchableOpacity style={styles.closeBtn} onPress={navigateBack}>
+          <Text style={styles.closeBtnText}>X</Text>
+        </TouchableOpacity>
         <Text style={StyleSheet.flatten([globalStyles.mainFont, styles.title])}>
           About the Speaker
         </Text>
@@ -19,6 +30,14 @@ const Speaker = ({ speaker, navigateBack }) => {
           <Text style={styles.speakerName}>{speaker.name}</Text>
           <Text style={styles.speakerBio}>{speaker.bio}</Text>
         </View>
+        <GradientButton
+          pressed={() => {
+            Linking.openURL(speaker.url).catch(err =>
+              console.error('An error occurred', err)
+            )
+          }}
+          title="Read More on Wikipedia"
+        />
       </ScrollView>
     </View>
   )
@@ -37,6 +56,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20
   },
+  closeBtn: {
+    position: 'absolute',
+    left: '5%'
+  },
+  closeBtnText: {
+    color: '#ffffff',
+    fontSize: 25
+  },
   title: {
     fontSize: 20,
     color: '#ffffff'
@@ -54,6 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     height: '100%',
     padding: 10,
+    paddingBottom: 100,
     margin: 10,
     marginBottom: 0,
     borderRadius: 10,

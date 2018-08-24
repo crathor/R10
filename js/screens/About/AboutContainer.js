@@ -21,7 +21,6 @@ export default class AboutContainer extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <Query query={CODE_OF_CONDUCT}>
         {({ loading, error, data }) => {

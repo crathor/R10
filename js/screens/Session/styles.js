@@ -6,22 +6,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     padding: 15
   },
-  buttonContainer: {
-    height: 60
-  },
-  button: {
-    height: 55,
-    width: '70%',
-    borderRadius: 50,
-    marginTop: 1,
-    marginLeft: '15%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 20
-  },
   location: {
     color: '#999999',
     fontWeight: 'bold',
