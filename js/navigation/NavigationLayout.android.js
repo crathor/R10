@@ -66,9 +66,16 @@ ScheduleStack.navigationOptions = {
 FavesStack.navigationOptions = {
   drawerIcon: ({ tintColor }) => renderIcon('md-heart', tintColor)
 }
-export default createDrawerNavigator({
-  Schedule: ScheduleStack,
-  Map: MapsStack,
-  Faves: FavesStack,
-  About: AboutStack
-})
+export default createDrawerNavigator(
+  {
+    Schedule: ScheduleStack,
+    Map: MapsStack,
+    Faves: FavesStack,
+    About: AboutStack
+  },
+  {
+    contentOptions: {
+      activeTintColor: '#9963ea'
+    }
+  }
+)
