@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Text, ActivityIndicator } from 'react-native'
+import { Text } from 'react-native'
 import Session from './Session'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import FavesContext from '../../context/FavesContext'
+import Loader from '../../components/Loader'
 import PropTypes from 'prop-types'
 
 const GET_SESSION = gql`
@@ -41,7 +42,7 @@ export default class SessionContainer extends Component {
           return (
             <Query query={GET_SESSION} variables={{ id: sessionID }}>
               {({ loading, error, data }) => {
-                if (loading) return <ActivityIndicator size="large" />
+                if (loading) return <Loader />
                 if (error) return <Text>Error! {error.message}</Text>
                 return (
                   <Session

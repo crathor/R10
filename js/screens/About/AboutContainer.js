@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, ActivityIndicator } from 'react-native'
+import { Text } from 'react-native'
 import About from './About'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import Loader from '../../components/Loader'
 import PropTypes from 'prop-types'
 
 const CODE_OF_CONDUCT = gql`
@@ -25,7 +26,7 @@ export default class AboutContainer extends Component {
     return (
       <Query query={CODE_OF_CONDUCT}>
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size="large" />
+          if (loading) return <Loader />
           if (error) return <Text>Error! {error.message}</Text>
           return <About codeOfConduct={data.allConducts} />
         }}

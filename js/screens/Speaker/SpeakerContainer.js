@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { View, Text, ActivityIndicator } from 'react-native'
+import { Text } from 'react-native'
 import Speaker from './Speaker'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import Loader from '../../components/Loader'
 import PropTypes from 'prop-types'
 
 const GET_SPEAKER = gql`
@@ -34,7 +35,7 @@ export default class SpeakerContainer extends Component {
     return (
       <Query query={GET_SPEAKER} variables={{ id: speakerID }}>
         {({ loading, error, data }) => {
-          if (loading) return <ActivityIndicator size="large" />
+          if (loading) return <Loader />
           if (error) return <Text>Error! {error.message}</Text>
           return (
             <Speaker

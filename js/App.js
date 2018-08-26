@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react'
-import { UIManager } from 'react-native'
+import { UIManager, StatusBar } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
 import RootStack from './navigation/RootStackNavigation'
@@ -20,6 +20,7 @@ export default class App extends Component {
     return (
       <ApolloProvider client={client}>
         <FavesProvider>
+          <StatusBar barStyle="light-content" />
           <RootStack />
         </FavesProvider>
       </ApolloProvider>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { ActivityIndicator, Text } from 'react-native'
+import { Text } from 'react-native'
 import Faves from './Faves'
 import FavesContext from '../../context/FavesContext'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { formatSessionData } from '../../lib/formatSessionData'
+import Loader from '../../components/Loader'
 import PropTypes from 'prop-types'
 
 const GET_FAVES = gql`
@@ -32,7 +33,7 @@ export default class FavesContainer extends Component {
           return (
             <Query query={GET_FAVES}>
               {({ loading, error, data }) => {
-                if (loading) return <ActivityIndicator size="Large" />
+                if (loading) return <Loader />
                 if (error) return <Text>{`Error: ${error}`}</Text>
                 // const filtered = data.allSessions.filter(session =>
                 //   value.faveIds.includes(session.id)
