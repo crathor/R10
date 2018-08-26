@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react'
-import { UIManager, StatusBar } from 'react-native'
+import { UIManager, StatusBar, Platform } from 'react-native'
 import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
 import RootStack from './navigation/RootStackNavigation'
@@ -18,7 +18,10 @@ UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true)
 export default class App extends Component {
   componentDidMount() {
-    SplashScreen.hide()
+    Platform.select({
+      ios: SplashScreen.hide(),
+      android: () => {}
+    })
   }
   render() {
     return (
