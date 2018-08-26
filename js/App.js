@@ -12,10 +12,14 @@ import { ApolloProvider } from 'react-apollo'
 import client from './config/api'
 import RootStack from './navigation/RootStackNavigation'
 import { FavesProvider } from './context/FavesContext'
+import SplashScreen from 'react-native-splash-screen'
 
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true)
 export default class App extends Component {
+  componentDidMount() {
+    SplashScreen.hide()
+  }
   render() {
     return (
       <ApolloProvider client={client}>
