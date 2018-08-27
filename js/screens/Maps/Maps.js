@@ -3,6 +3,7 @@ import { Platform } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import styles from './styles'
 import ComingSoon from './ComingSoon'
+import PropTypes from 'prop-types'
 
 const Maps = ({ region }) =>
   Platform.select({
@@ -17,4 +18,7 @@ const Maps = ({ region }) =>
     android: <ComingSoon />
   })
 
+Maps.propTypes = {
+  region: PropTypes.object.isRequired
+}
 export default Maps

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Maps from './Maps'
+import PropTypes from 'prop-types'
 
 export default class MapsContainer extends Component {
   static navigationOptions = {
@@ -20,4 +21,8 @@ export default class MapsContainer extends Component {
   render() {
     return <Maps region={this.state.region} />
   }
+}
+
+MapsContainer.propTypes = {
+  navigation: PropTypes.object.isRequired
 }
