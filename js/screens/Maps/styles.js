@@ -7,6 +7,14 @@ const styles = StyleSheet.create({
     flex: 1,
     width,
     height
+  },
+  comingSoonText: {
+    fontSize: 40
+  },
+  comingSoonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e6e6e6'
   }
 })
 
