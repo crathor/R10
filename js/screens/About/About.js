@@ -6,7 +6,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  LayoutAnimation
+  LayoutAnimation,
+  Animated
 } from 'react-native'
 import Title from '../../components/Title'
 import { styles } from './styles'
@@ -99,6 +100,8 @@ class About extends Component {
               )
             })}
           </View>
+          <View style={StyleSheet.flatten([styles.spacer, styles.margins])} />
+          <Text style={globalStyles.mainFont}>© RED Academy 2018</Text>
         </ScrollView>
       </View>
     )
