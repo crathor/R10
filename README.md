@@ -16,6 +16,7 @@ To get started, fork this repository to your local machine. You will need to ens
 
 [Node](https://nodejs.org/en/) - JavaScript runtime environment
 
+[CocoaPods](https://cocoapods.org/) - CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.
 
 
 ### Installing
@@ -38,6 +39,14 @@ Navigate into the folder and run the following commands
 npm install or yarn install
 ```
 
+At this point
+```
+Be sure to check that you have installed CocoaPods. You can click the link supplied in the prerequisites.
+```
+Then
+```
+cd into ios/ and run `pod install` This is necessary to run react-native-maps
+```
 Then
 
 ```
