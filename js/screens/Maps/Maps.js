@@ -1,11 +1,15 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import MapView, { Marker } from 'react-native-maps'
+import styles from './styles'
 
-const Maps = () => {
+const Maps = ({ region }) => {
   return (
-    <View>
-      <Text>Map</Text>
-    </View>
+    <MapView style={styles.container} region={region}>
+      <Marker
+        coordinate={region}
+        image={require('../../assets/images/map_pin.png')}
+      />
+    </MapView>
   )
 }
 
