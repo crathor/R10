@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionList, StyleSheet, Text } from 'react-native'
+import { SectionList, StyleSheet } from 'react-native'
 import SectionCard from './SectionCard'
 import SectionHeader from './SectionHeader'
 import EmptyList from './EmptyList'

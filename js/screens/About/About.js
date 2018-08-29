@@ -6,8 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  LayoutAnimation,
-  Animated
+  LayoutAnimation
 } from 'react-native'
 import Title from '../../components/Title'
 import { styles } from './styles'
